@@ -1,0 +1,23 @@
+# Images Directory Structure
+
+This directory contains all images for the Hotel Management System.
+
+## Directory Structure:
+
+- `/gallery/` - Gallery images for the website
+- `/rooms/` - Room type images
+- `/avatars/` - User profile images
+- `/icons/` - System icons and logos
+- `/backgrounds/` - Background images
+
+## Image Guidelines:
+
+- Use optimized images (WebP or JPG format)
+- Maximum file size: 2MB
+- Recommended dimensions for rooms: 800x600px
+- Recommended dimensions for gallery: 1200x800px
+- Use descriptive filenames
+
+## Placeholder Images:
+
+For development purposes, placeholder images are used when actual images are not available. The system includes fallback mechanisms to handle missing images gracefully.
