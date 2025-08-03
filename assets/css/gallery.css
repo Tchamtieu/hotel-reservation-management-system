@@ -1,0 +1,447 @@
+/* Gallery Specific Styles */
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, 
+        rgba(46, 139, 87, 0.9) 0%, 
+        rgba(220, 20, 60, 0.8) 50%, 
+        rgba(255, 215, 0, 0.7) 100%),
+        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3') center/cover;
+    padding: 150px 0 100px;
+    position: relative;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.page-header .container {
+    position: relative;
+    z-index: 2;
+}
+
+.breadcrumb {
+    background: transparent;
+}
+
+.breadcrumb-item a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* Carousel Styles */
+.carousel-image {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.carousel-caption {
+    bottom: 20px;
+    border-radius: 15px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(46, 139, 87, 0.8);
+    border-radius: 50%;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+}
+
+/* Gallery Filters */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+.filter-btn:not(.active):hover {
+    background: rgba(46, 139, 87, 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    position: relative;
+}
+
+.gallery-item {
+    transition: all 0.5s ease;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.gallery-item.hiding {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    height: 300px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 60px 0 rgba(31, 38, 135, 0.8);
+}
+
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.gallery-card:hover .gallery-image {
+    transform: scale(1.15);
+    filter: brightness(0.8);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(46, 139, 87, 0.9) 0%,
+        rgba(220, 20, 60, 0.8) 50%,
+        rgba(255, 215, 0, 0.7) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-content {
+    text-align: center;
+    color: white;
+    transform: translateY(30px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.gallery-card:hover .gallery-content {
+    transform: translateY(0);
+}
+
+.gallery-content h5 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-content p {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.gallery-content .btn {
+    border-radius: 50px;
+    padding: 8px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.gallery-content .btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal-content.glassmorphism {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+}
+
+.modal-header,
+.modal-footer {
+    background: transparent;
+}
+
+.modal-title {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+#modalImage {
+    border-radius: 15px;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.modal-footer .btn {
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal-footer .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 139, 87, 0.4);
+}
+
+/* Loading Animation */
+.gallery-item {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+
+/* Filter Animation */
+.filter-animation {
+    animation: filterPulse 0.3s ease;
+}
+
+@keyframes filterPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Masonry-like Layout for larger screens */
+@media (min-width: 1200px) {
+    .gallery-grid {
+        column-count: 3;
+        column-gap: 2rem;
+    }
+    
+    .gallery-item {
+        break-inside: avoid;
+        margin-bottom: 2rem;
+        display: inline-block;
+        width: 100%;
+    }
+    
+    .gallery-card {
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .gallery-image {
+        height: auto;
+        min-height: 250px;
+    }
+    
+    .gallery-item:nth-child(3n+1) .gallery-card {
+        height: 350px;
+    }
+    
+    .gallery-item:nth-child(3n+2) .gallery-card {
+        height: 300px;
+    }
+    
+    .gallery-item:nth-child(3n+3) .gallery-card {
+        height: 400px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-header {
+        padding: 120px 0 80px;
+    }
+    
+    .carousel-image {
+        height: 300px;
+    }
+    
+    .gallery-filters {
+        gap: 0.5rem;
+    }
+    
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .gallery-card {
+        height: 250px;
+    }
+    
+    .modal-dialog {
+        margin: 1rem;
+    }
+    
+    #modalImage {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-header {
+        padding: 100px 0 60px;
+    }
+    
+    .carousel-image {
+        height: 250px;
+    }
+    
+    .gallery-card {
+        height: 200px;
+    }
+    
+    .gallery-content h5 {
+        font-size: 1.2rem;
+    }
+    
+    .gallery-content p {
+        font-size: 0.9rem;
+    }
+    
+    .modal-footer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .modal-footer .btn {
+        width: 100%;
+    }
+}
+
+/* Hover effects for touch devices */
+@media (hover: none) {
+    .gallery-overlay {
+        opacity: 0.8;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.7) 100%
+        );
+    }
+    
+    .gallery-content {
+        transform: translateY(0);
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1rem;
+    }
+    
+    .gallery-card:hover .gallery-image {
+        transform: scale(1);
+    }
+}
+
+/* Custom scrollbar for modal */
+.modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-green);
+}
+
+/* Zoom effect on modal image */
+.modal-image-container {
+    position: relative;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.modal-image-container.zoomed {
+    cursor: zoom-out;
+}
+
+.modal-image-container.zoomed #modalImage {
+    transform: scale(2);
+    cursor: grab;
+}
+
+.modal-image-container.zoomed #modalImage:active {
+    cursor: grabbing;
+}
